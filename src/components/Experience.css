@@ -1,0 +1,96 @@
+.experience {
+  padding: 6rem 2rem;
+  background: var(--gradient-soft-blue);
+}
+
+.experience-block {
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-block + .experience-block {
+  margin-top: 1.5rem;
+}
+
+.experience-block:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.exp-title {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.exp-meta {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.exp-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-list li {
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.section-header.minor {
+  margin-top: 3rem;
+}
+
+.experience-block.compact {
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 3rem 1.5rem;
+  }
+
+  .experience-block {
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .exp-title {
+    font-size: 1rem;
+  }
+
+  .exp-meta {
+    font-size: 0.85rem;
+  }
+
+  .exp-list li {
+    font-size: 0.9rem;
+  }
+}
