@@ -38,10 +38,10 @@ function Achievements() {
           <div className="header-line"></div>
         </div>
 
-        <div className="achievements-list">
+        <div className="achievements-grid">
           {achievements.map((achievement, index) => (
-            <div key={index} className="achievement-item">
-              <span className="medal">{achievement.medal}</span>
+            <div key={index} className={`achievement-card ${achievement.medal === '🏆' || achievement.medal === '🏅' ? 'gold' : 'silver'}`}>
+              <div className="medal-badge">{achievement.medal}</div>
               <div className="achievement-content">
                 <h3>{achievement.title}</h3>
                 <p>{achievement.subtitle}</p>
@@ -55,3 +55,4 @@ function Achievements() {
 }
 
 export default Achievements;
+

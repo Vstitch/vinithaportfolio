@@ -186,3 +186,17 @@ button {
     opacity: 0.8;
   }
 }
+
+/* Global floating animation for Stitch graphics */
+@keyframes float {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-54%) rotate(2deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+

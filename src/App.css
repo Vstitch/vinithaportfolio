@@ -3,6 +3,17 @@
   overflow-x: hidden;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-3), var(--color-secondary));
+  z-index: 1100;
+  transition: width 0.1s ease-out;
+}
+
+
 section {
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;

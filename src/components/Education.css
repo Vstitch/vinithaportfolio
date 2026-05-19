@@ -3,27 +3,65 @@
   background: var(--gradient-soft-pink);
 }
 
-.education-list {
+.education-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+  border-left: 2px dashed rgba(255, 175, 204, 0.6);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.education-item {
+.education-card {
+  position: relative;
   padding: 2rem;
   background-color: var(--color-surface);
-  border-radius: 8px;
+  border-radius: 16px;
   border: 1px solid var(--color-border);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   animation: slideInRight 0.6s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
-.education-item:hover {
+.education-card::before {
+  content: '🎓';
+  position: absolute;
+  left: -3.5rem;
+  top: 1.75rem;
+  width: 32px;
+  height: 32px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(255, 175, 204, 0.2);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
   border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(255, 175, 204, 0.1);
+  transform: translateX(4px);
 }
 
-.education-header {
+.education-card:hover::before {
+  background: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* Custom highlight for top education card */
+.education-card:first-child {
+  border: 1px solid rgba(255, 175, 204, 0.4);
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 175, 204, 0.03) 100%);
+}
+
+.education-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -32,7 +70,7 @@
   flex-wrap: wrap;
 }
 
-.education-header h3 {
+.education-card-header h3 {
   font-size: 1.25rem;
   color: var(--color-text);
   margin: 0;
@@ -46,6 +84,9 @@
   font-weight: 600;
   white-space: nowrap;
   letter-spacing: 0.2px;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
 }
 
 .degree {
@@ -56,36 +97,44 @@
   letter-spacing: 0.2px;
 }
 
-.divider {
-  height: 1px;
-  background-color: var(--color-border);
-  margin-top: 2rem;
-}
-
 @media (max-width: 768px) {
   .education {
     padding: 3rem 1.5rem;
   }
 
-  .education-item {
+  .education-timeline {
+    padding-left: 1.75rem;
+    gap: 2rem;
+  }
+
+  .education-card {
     padding: 1.25rem;
   }
 
-  .education-header {
+  .education-card::before {
+    left: -2.5rem;
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+    top: 1.25rem;
+  }
+
+  .education-card-header {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .education-header h3 {
+  .education-card-header h3 {
     font-size: 1.1rem;
   }
 
   .period {
     white-space: normal;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .degree {
     font-size: 0.95rem;
   }
 }
+

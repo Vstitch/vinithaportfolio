@@ -4,11 +4,6 @@ import './Education.css';
 function Education() {
   const education = [
     {
-      institution: 'IIT Madras',
-      degree: 'B.Sc. Data Science & Applications',
-      period: '2024–2028',
-    },
-    {
       institution: 'PSGR Krishnammal College',
       degree: 'B.Com (Computer Applications)',
       period: '2023–2026',
@@ -28,15 +23,14 @@ function Education() {
           <div className="header-line"></div>
         </div>
 
-        <div className="education-list">
+        <div className="education-timeline">
           {education.map((edu, index) => (
-            <div key={index} className="education-item">
-              <div className="education-header">
+            <div key={index} className="education-card">
+              <div className="education-card-header">
                 <h3>{edu.institution}</h3>
                 <span className="period">{edu.period}</span>
               </div>
               <p className="degree">{edu.degree}</p>
-              {index < education.length - 1 && <div className="divider"></div>}
             </div>
           ))}
         </div>
@@ -46,3 +40,4 @@ function Education() {
 }
 
 export default Education;
+

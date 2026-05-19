@@ -3,11 +3,20 @@ import { Github, Linkedin, Mail, ExternalLink, ChevronDown } from 'lucide-react'
 import './Hero.css';
 
 function Hero() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      const yOffset = -70;
+      const y = aboutSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="hero">
       <img
         src={process.env.PUBLIC_URL + '/assest/stitch.png'}
-        alt="decorative"
+        alt="decorative Stitch"
         className="hero-side-image"
         loading="lazy"
       />
@@ -20,8 +29,18 @@ function Hero() {
           <p className="hero-roles">
             Learner • Developer • Innovator
           </p>
+          
+          <div className="hero-tech-badges">
+            <span className="tech-badge">React</span>
+            <span className="tech-badge">React Native</span>
+            <span className="tech-badge">JavaScript</span>
+            <span className="tech-badge">Python</span>
+            <span className="tech-badge">Web3</span>
+            <span className="tech-badge">Firebase</span>
+          </div>
+
           <p className="hero-tagline">
-            we belive in ohana , every client matters:)
+            "We believe in Ohana, every client matters :)" 🌺
           </p>
 
           <div className="hero-links">
@@ -65,11 +84,15 @@ function Hero() {
             </a>
           </div>
 
-          {/* CTA removed per request */}
+          <div className="hero-cta-wrapper">
+            <button className="primary-button" onClick={scrollToAbout}>
+              Explore Portfolio
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="scroll-indicator">
+      <div className="scroll-indicator" onClick={scrollToAbout}>
         <ChevronDown size={24} />
       </div>
     </section>
@@ -77,3 +100,4 @@ function Hero() {
 }
 
 export default Hero;
+

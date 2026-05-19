@@ -22,8 +22,26 @@ function About() {
             <p>
               I’m like Stitch — a little wild, a bit unexpected, and full of energy. Just like him, I don’t fit into one box. I’ve worked in all sorts of places—business, tech, marketing— and I jump into everything with no fear. I’m curious, adaptable, and ready to figure things out on the go. Sometimes I’m rough around the edges, but I get the job done, and I always bring my unique spark to whatever I’m working on. Like Stitch, I’m all about being real, staying true to myself, and making my own path.
               <br />
-              <span style={{opacity: 0.8}}>~~ vinitha 🎀</span>
+              <span style={{opacity: 0.8, fontWeight: 700}}>~~ vinitha 🎀</span>
             </p>
+
+            <div className="about-stats">
+              <div className="about-stat-card">
+                <span className="stat-icon">🌐</span>
+                <h4>Web3 Contributor</h4>
+                <p>HER DAO & Monad</p>
+              </div>
+              <div className="about-stat-card">
+                <span className="stat-icon">💡</span>
+                <h4>Founder</h4>
+                <p>The Plumber Guy</p>
+              </div>
+              <div className="about-stat-card">
+                <span className="stat-icon">🏆</span>
+                <h4>Hackathons</h4>
+                <p>3x 2nd Prize Winner</p>
+              </div>
+            </div>
           </div>
           <div className="about-image-wrap">
             <img
@@ -40,3 +58,4 @@ function About() {
 }
 
 export default About;
+

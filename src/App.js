@@ -12,10 +12,17 @@ import Contact from './components/Contact';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const progress = (window.scrollY / totalHeight) * 100;
+        setScrollProgress(progress);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
       <Navbar scrolled={scrolled} />
       <Hero />
       <About />
@@ -38,3 +46,4 @@ function App() {
 }
 
 export default App;
+
